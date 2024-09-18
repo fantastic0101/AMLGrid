@@ -1,5 +1,4 @@
 import React from 'react';
-import { InboxOutlined } from '@ant-design/icons';
 import BackComponent from '../../components/BackComponent';
 import Button from '../../components/Button';
 import { Select, Input, message, Upload } from 'antd';

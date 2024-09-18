@@ -17,7 +17,8 @@ const Button = ({
     display,
     align,
     className = '',
-    targetPath
+    targetPath,
+    onClick
 }) => {
     const navigate = useNavigate();
 
@@ -37,7 +38,7 @@ const Button = ({
         display: display,
         alignItems: align
     }}
-        onClick={handleClick}
+        onClick={targetPath ? handleClick : onClick}
     >
         {iconPosition === "left" ? <img className={iconClass} src={icon} alt="icon" style={{ padding: iconPadding }}></img> : ""}
         {label}
