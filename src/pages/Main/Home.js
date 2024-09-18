@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../../components/Button';
 import { Progress } from 'antd';
-import PaymentDlg from '../../components/PaymentDlg';
 
 const twoColors = {
     '0%': '#108ee9',
