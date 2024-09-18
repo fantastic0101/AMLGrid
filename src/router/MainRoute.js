@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom';
 import Home from '../pages/Main/Home';
 import Deposit from '../pages/Main/Deposit';
 import DepositDetail from '../pages/Main/DepositDetail';
@@ -9,72 +9,90 @@ import Authentication from '../pages/Main/Authentication';
 import Profile from '../pages/Main/Profile';
 import Security from '../pages/Main/Security';
 import SupportTicket from '../pages/Main/SupportTicket';
+import ProtectedRoute from '../components/protectedRoute'; // Import the ProtectedRoute component
 
 export default function Router() {
     return useRoutes([
         {
             path: '/home',
             element: (
-                <MainLayout>
-                    <Home />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <Home />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/deposit',
             element: (
-                <MainLayout>
-                    <Deposit />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <Deposit />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/deposit_detail',
             element: (
-                <MainLayout>
-                    <DepositDetail />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <DepositDetail />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/deposit_history',
             element: (
-                <MainLayout>
-                    <DepositHistory />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <DepositHistory />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/2fa_auth',
             element: (
-                <MainLayout>
-                    <Authentication />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <Authentication />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/profile',
             element: (
-                <MainLayout>
-                    <Profile />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <Profile />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
-            path: '/security',
+            path: '/setting',
             element: (
-                <MainLayout>
-                    <Security />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <Security />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
         {
             path: '/support_ticket',
             element: (
-                <MainLayout>
-                    <SupportTicket />
-                </MainLayout>
+                <ProtectedRoute>
+                    <MainLayout>
+                        <SupportTicket />
+                    </MainLayout>
+                </ProtectedRoute>
             ),
         },
+        // Add any other public routes here
     ]);
 }

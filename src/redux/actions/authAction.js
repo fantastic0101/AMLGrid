@@ -1,5 +1,5 @@
 import { serverUrl } from '../../utils/url';
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE } from './actionTypes';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, LOGOUT } from './actionTypes';
 import { message } from 'antd';
 
 export const loginRequest = () => ({
@@ -29,14 +29,16 @@ export const login = (email, password) => {
         body: JSON.stringify({ email, password }),
       });
 
-      if (!response.ok) {
-        message.error('Login failed.');
+      if(response.status === 200) {
+        const data = await response.json();
+        const token = data.token;
+        dispatch(loginSuccess(token));
+        message.success('Login Success');
+        localStorage.setItem('token', token);
       }
-
-      const data = await response.json();
-      const token = data.token;
-      dispatch(loginSuccess(token));
-      message.success('Login Success');
+      else {
+        message.error('Login Failed');  
+      }
     } catch (error) {
       message.error(error.message);
       //   dispatch(loginFailure(error.message));
@@ -84,3 +86,8 @@ export const register = (name, email, password) => {
     }
   };
 };
+
+export const logout = () => ({
+  type: LOGOUT,
+  payload: ''
+});

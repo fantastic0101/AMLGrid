@@ -49,7 +49,10 @@ module.exports = {
       boxShadow: {
         'custom-light-1': '0 28px 20px 0px #AAAAAA1A',
         'custom-light-2': '0 111px 50px 0px #AAAAAA17',
-      }
+      },
+      spacing: {
+        'calc-100-2rem': 'calc(100% - 2rem)',
+      },
     },
   },
   plugins: [],
