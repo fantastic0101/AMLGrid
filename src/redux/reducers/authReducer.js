@@ -1,8 +1,8 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/actionTypes';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
   loading: false,
-  token: null,
+  token: localStorage.getItem('token') || null, // Preload token from localStorage
   error: null,
 };
 
@@ -28,6 +28,12 @@ const authReducer = (state = initialState, action) => {
         token: null,
         error: action.payload,
       };
+    case LOGOUT:
+      return {
+        loading: false,
+        token: null,
+        error: action.payload,
+      }
     default:
       return state;
   }

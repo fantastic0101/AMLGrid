@@ -19,7 +19,8 @@ module.exports = {
           DEFAULT: "#7A7A7A",
           dark: "#505660",
           light: "#D1D1D1",
-          light2: "#6B7280"
+          light2: "#6B7280",
+          light3: "#F9FAFB"
         },
         back: {
           DEFAULT: "#E8F0FF",
@@ -49,7 +50,10 @@ module.exports = {
       boxShadow: {
         'custom-light-1': '0 28px 20px 0px #AAAAAA1A',
         'custom-light-2': '0 111px 50px 0px #AAAAAA17',
-      }
+      },
+      spacing: {
+        'calc-100-2rem': 'calc(100% - 2rem)',
+      },
     },
   },
   plugins: [],

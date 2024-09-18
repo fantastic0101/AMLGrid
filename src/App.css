@@ -46,3 +46,7 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-layout-sider {
+  min-width: 300px !important;
+}
