@@ -19,7 +19,8 @@ module.exports = {
           DEFAULT: "#7A7A7A",
           dark: "#505660",
           light: "#D1D1D1",
-          light2: "#6B7280"
+          light2: "#6B7280",
+          light3: "#F9FAFB"
         },
         back: {
           DEFAULT: "#E8F0FF",

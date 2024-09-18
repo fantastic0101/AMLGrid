@@ -72,7 +72,9 @@ const SignIn = () => {
     return (
         <div className='grid w-full h-full max-w-screen-xl px-8 mx-auto gap-8 lg:gap-8 xl:gap-0 lg:py-12 lg:grid-cols-12 bg-white'>
             <div className='lg:col-span-5 items-center flex flex-col justify-center border-1 border-secondary-light h-full rounded-2xl shadow-custom-light1 shadow-custom-light-2'>
-                <img className='pb-12' src='/assets/images/logo.png' alt='logo' />
+                <Link to='/'>
+                    <img className='pb-12' src='/assets/images/logo.png' alt='logo' />
+                </Link>
                 <span className='text-5xl font-semibold pb-4'>Login</span>
                 <div className='flex pb-8'>
                     <span className='text-secondary'>Need to register? </span>

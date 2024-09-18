@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 import { Progress } from 'antd';
+import AMLHistory from '../../components/AMLHistory';
 
 const twoColors = {
     '0%': '#108ee9',
@@ -64,6 +65,10 @@ const Home = () => (
                     <span className='w-80'>Fetching address details</span>
                     <Progress percent={99.9} strokeColor={twoColors} />
                 </div>
+            </div>
+            <div className='lg:col-span-12 p-4 border-1 border-secondary-light rounded-md bg-white mt-8 grid lg:grid-cols-12'>
+                <span className='text-2xl col-span-12 pb-4 font-medium'>AML Check History</span>
+                <AMLHistory/>
             </div>
             <div className='lg:col-span-12 p-4 border-1 border-secondary-light rounded-md bg-white mt-8 grid lg:grid-cols-12'>
                 <span className='text-2xl font-medium w-full flex col-span-12 pb-4'>Screening Result</span>

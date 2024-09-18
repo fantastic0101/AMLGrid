@@ -7,13 +7,13 @@ import { logout } from '../../redux/actions/authAction';
 
 const { Header, Content, Sider } = Layout;
 const sideList = [
-  { path: '/home', label: 'AML Check', icon: '/assets/images/chart.svg' },
-  { path: '/profile', label: 'Profile', icon: '/assets/images/profile-circle.svg' },
-  { path: '/check_history', label: 'Check History', icon: '/assets/images/shop.svg' },
-  { path: '/docs', label: 'Api Documentation', icon: '/assets/images/invoice-01.svg' },
-  { path: '/setting', label: 'Setting', icon: '/assets/images/setting.svg' },
-  { path: '/support_ticket', label: 'Support Ticket', icon: '/assets/images/message-question.svg' },
-  { path: '/theme', label: 'Theme: Light', icon: '/assets/images/sun-01.svg' }
+  { path: '/home', label: 'AML Check', icon: '/assets/images/chart-1.svg', iconActive: '/assets/images/chart.svg' },
+  { path: '/profile', label: 'Profile', icon: '/assets/images/profile-circle.svg', iconActive: '/assets/images/profile-circle-1.svg' },
+  { path: '/check_history', label: 'Check History', icon: '/assets/images/shop.svg', iconActive: '/assets/images/shop-1.svg' },
+  { path: '/docs', label: 'Api Documentation', icon: '/assets/images/invoice-01.svg', iconActive: '/assets/images/invoice-01-1.svg' },
+  { path: '/setting', label: 'Setting', icon: '/assets/images/setting.svg', iconActive: '/assets/images/setting-1.svg' },
+  { path: '/support_ticket', label: 'Support Ticket', icon: '/assets/images/message-question.svg', iconActive: '/assets/images/message-question-1.svg' },
+  { path: '/theme', label: 'Theme: Light', icon: '/assets/images/sun-01.svg', iconActive: '/assets/images/sun-01-1.svg' }
 ];
 
 const MainLayout = ({ children }) => {
@@ -49,7 +49,7 @@ const MainLayout = ({ children }) => {
         backgroundColor: 'white',
         minWidth: '300px !important'
       }}>
-        <div className="px-3 pt-6 pb-12">
+        <div className="px-3 pt-6 pb-12 flex justify-center">
           <Link to='/home'>
             <img src='/assets/images/logo.png' alt='icon' />
           </Link>
@@ -59,7 +59,7 @@ const MainLayout = ({ children }) => {
             <Link key={index} className='flex items-center w-full' to={item.path}>
               <li className={`px-2 py-2 mt-2 rounded-md flex items-center w-full ${item.path === pathname ? 'bg-primary text-white' : 'bg-white text-secondary-dark'
                 }`}>
-                <img src={item.icon} alt='icon' />
+                <img src={item.path === pathname ? item.iconActive : item.icon} alt='icon' />
                 <span className='pl-2 text-sm'>{item.label}</span>
               </li>
             </Link>
@@ -74,7 +74,7 @@ const MainLayout = ({ children }) => {
           <span className='text-base font-medium pl-2'>Log out</span>
         </div>
       </Sider>
-      <Layout style={{ marginInlineStart: 200 }}>
+      <Layout style={{ marginInlineStart: 300 }}>
         <Header className="py-4 px-4 bg-white flex flex-col sm:flex-row justify-between items-start sm:items-center h-auto sm:h-20 border-b border-secondary-light">
           <span className="text-2xl sm:text-3xl font-semibold">AML Check</span>
           <div className="flex flex-col sm:flex-row justify-center items-start sm:items-end mt-3 sm:mt-0">

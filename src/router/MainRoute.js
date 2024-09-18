@@ -9,7 +9,8 @@ import Authentication from '../pages/Main/Authentication';
 import Profile from '../pages/Main/Profile';
 import Security from '../pages/Main/Security';
 import SupportTicket from '../pages/Main/SupportTicket';
-import ProtectedRoute from '../components/protectedRoute'; // Import the ProtectedRoute component
+import CheckHistory from '../pages/Main/CheckHistory';
+import ProtectedRoute from '../components/protectedRoute';
 
 export default function Router() {
     return useRoutes([
@@ -93,6 +94,15 @@ export default function Router() {
                 </ProtectedRoute>
             ),
         },
-        // Add any other public routes here
+        {
+            path: '/check_history',
+            element: (
+                <ProtectedRoute>
+                    <MainLayout>
+                        <CheckHistory />
+                    </MainLayout>
+                </ProtectedRoute>
+            ),
+        },
     ]);
 }
